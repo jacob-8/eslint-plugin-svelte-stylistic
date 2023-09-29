@@ -1,19 +1,40 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`consistent-attribute-lines > invalid > <div 
-  baz foo bar="2">Text</div> 1`] = `
-"<div 
-  baz
+exports[`consistent-attribute-lines > invalid > <div
+    baz foo bar="2">Text</div> 1`] = `
+"<div
+    baz
 foo
 bar=\\"2\\">Text</div>"
 `;
 
 exports[`consistent-attribute-lines > invalid > <div baz
-  foo 
-  bar="2">Text</div> 1`] = `"<div baz foo bar=\\"2\\">Text</div>"`;
+    foo
+    bar="2">Text</div> 1`] = `"<div baz foo bar=\\"2\\">Text</div>"`;
 
-exports[`consistent-attribute-lines > invalid > <div baz foo 
-  bar="2">Text</div> 1`] = `"<div baz foo bar=\\"2\\">Text</div>"`;
+exports[`consistent-attribute-lines > invalid > <div baz foo
+    bar="2">Text</div> 1`] = `"<div baz foo bar=\\"2\\">Text</div>"`;
 
 exports[`consistent-attribute-lines > invalid > <div foo
-  bar /> 1`] = `"<div foo bar />"`;
+    bar /> 1`] = `"<div foo bar />"`;
+
+exports[`consistent-attribute-lines > invalid > <div foo use:baz={{
+              setting: 'value',
+            }} /> 1`] = `
+"<div
+foo
+use:baz={{
+              setting: 'value',
+            }} />"
+`;
+
+exports[`consistent-attribute-lines > invalid > <div foo use:baz={{
+              setting: 'value',
+            }} use:box /> 1`] = `
+"<div
+foo
+use:baz={{
+              setting: 'value',
+            }}
+use:box />"
+`;

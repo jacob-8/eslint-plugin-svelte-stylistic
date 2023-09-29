@@ -9,26 +9,40 @@ const valids: string[] = [
 
   `<div baz foo bar="2">Text</div>`,
 
-  `<div 
+  `<div
     baz
-    foo 
+    foo
     bar="2">Text</div>`,
+
+  `<div
+    foo
+    use:baz={{
+      setting: 'value',
+    }} />`,
 ]
 
 // See snapshot for fixed code
 const invalids = [
   `<div baz
-  foo 
-  bar="2">Text</div>`,
+    foo
+    bar="2">Text</div>`,
 
-  `<div baz foo 
-  bar="2">Text</div>`,
+  `<div baz foo
+    bar="2">Text</div>`,
 
-  `<div 
-  baz foo bar="2">Text</div>`,
+  `<div
+    baz foo bar="2">Text</div>`,
 
   `<div foo
-  bar />`,
+    bar />`,
+
+  `<div foo use:baz={{
+              setting: 'value',
+            }} />`,
+
+  `<div foo use:baz={{
+              setting: 'value',
+            }} use:box />`,
 ]
 
 const ruleTester: RuleTester = new RuleTester({
