@@ -41,7 +41,7 @@ export default createEslintRule<Options, MessageIds>({
             *fix(fixer) {
               const from = lastAttr?.range[1] ?? node.startTag.range[0]
               const to = node.startTag.range[1]
-              const code = context.getSourceCode().text.slice(from, to)
+              const code = context.sourceCode.text.slice(from, to)
               yield fixer.replaceTextRange([from, to], code.replace(/\s+/g, ''))
             },
           })
@@ -63,7 +63,7 @@ export default createEslintRule<Options, MessageIds>({
             *fix(fixer) {
               const from = node.endTag!.range[0]
               const to = node.endTag!.range[1]
-              const code = context.getSourceCode().text.slice(from, to)
+              const code = context.sourceCode.text.slice(from, to)
               yield fixer.replaceTextRange([from, to], code.replace(/\s+/g, ''))
             },
           })

@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-svelte-stylistic",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "packageManager": "pnpm@8.7.6",
   "description": "More Svelte Formatting rules",
   "author": "Jacob Bowdoin",
