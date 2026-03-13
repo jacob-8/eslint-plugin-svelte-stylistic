@@ -23,7 +23,9 @@
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "files": [
-    "dist"
+    "build.config.ts",
+    "dist",
+    "src"
   ],
   "scripts": {
     "build": "unbuild",
@@ -34,7 +36,7 @@
     "start": "esno src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "prepare": "simple-git-hooks"
+    "prepare": "unbuild && simple-git-hooks"
   },
   "dependencies": {
     "@typescript-eslint/utils": "^6.7.2"
